@@ -1,0 +1,11 @@
+#!/bin/bash
+DIRECTORY=$(dirname "$0")
+echo "Changing to ${DIRECTORY}"
+cd  "$DIRECTORY" || exit 1
+
+echo "Run your project here."
+#python3.10 main.py http01 --dir https://localhost:14000/dir --record 127.0.0.1 --domain netsec.ethz.ch --domain syssec.ethz.ch
+python3.10 main.py dns01 --dir https://localhost:14000/dir --record 1.2.3.4 --domain netsec.ethz.ch --domain syssec.ethz.ch
+
+#python3.10 main.py http01 --dir https://localhost:14000/dir --record 127.0.0.1 --domain netsec.ethz.ch --domain syssec.ethz.ch --revoke
+#python3.10 main.py dns01 --dir https://localhost:14000/dir --record 1.2.3.4 --domain netsec.ethz.ch --domain syssec.ethz.ch --revoke
